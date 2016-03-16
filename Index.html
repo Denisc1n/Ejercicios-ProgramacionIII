@@ -1,20 +1,23 @@
 <!DOCTYPE html> <!--No olvidar consultar por que aparece DOCTYPE-->
 <head>
         <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
         <title>Sign Up Form</title>
-        <link rel="stylesheet" href="index.css">
-        <link href="index.css" rel='stylesheet' type='text/css'>
-        <link rel="stylesheet" href="index.css">
-    </head>
+     	<link rel="stylesheet" href="index.css" type="text/css">
+     	<!--<style type="text/css"> 
+			body { 
+			color: purple; 
+			background-color: #d8da3d } 
+			</style>    Aplico estilo de forma manual. --> 
+</head>
     <body>
 
-      <form action="index.html" method="post">
+      <form action="Index.html" method="post">
       
         <h1>Sign Up</h1>
         
         <fieldset>
-          <legend><span class="number">1&nbsp;-&nbsp;&nbsp;</span>Informacion Basica</legend>
+          <legend><span class="number">1°</span>Informacion Basica</legend>
           <label for="name">Nombre:</label>
           <input type="text" id="name" name="user_name">
           
@@ -32,14 +35,13 @@
           <input type="number" name="numero"></input><br>
 
           <label>Ingrese fecha de Cumpleaños: </label><br><input type="date" name="Cumpleaños" max="1979/12/31"><br></input>
-          <label>Ingrese Color Favorito: </label><br><input type="color" name="colorfav"></input><!--Nota: Buscar alternativas a esto.-->
-
+          <label>Ingrese Color Favorito: </label><br><input type="color" name="colorfav"></input><!--Nota: Buscar alternativas a esto.-->    
 
 
         </fieldset>
         
         <fieldset>
-          <legend><span class="number">2&nbsp;-&nbsp;&nbsp;</span>Datos sobre usted</legend>
+          <legend><span class="number">2°</span>Datos sobre usted</legend>
           <label for="bio">Breve Introducción:</label>
           <textarea id="bio" name="user_bio"></textarea>
         </fieldset>
