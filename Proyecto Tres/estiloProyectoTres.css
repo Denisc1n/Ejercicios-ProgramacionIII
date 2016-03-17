@@ -1,0 +1,31 @@
+body{
+	font-family:'Times', georgia, serif;
+	color: #708090
+}
+
+h1{
+	margin: auto;
+	text-align: center;
+}
+
+input{
+	padding: auto;
+	background-color: #2F4F4F;
+	color: #F0FFFF
+}
+
+fieldset{
+background-color: #DCDCDC;
+}
+
+form {
+  max-width: 750px;
+  margin: 40px auto;
+  padding: 10px 20px;
+  background: #DCDCDC;
+  border-radius: 15px;
+}
+
+html{
+	background-color: #F0FFF0;
+}
