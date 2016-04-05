@@ -2,43 +2,36 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title>Curso Ingreso UTN FRA</title>
-
-		<!--Estilos-->
-		<link rel="stylesheet" type="text/css" href="../estilo.css">
-		<link rel="stylesheet" type="text/css" href="../animacion.css">
-		<!--final de Estilos-->
-
-		<!--Lógica-Programación-->
-		<script type="text/javascript" src="jsFerreteConstruccion.js"></script>
-        <!--Final de Lógica-Programación -->
-		
+		<title>UTN FRA</title>
 
 		</head>
 	<body>
-		<div class="CajaUno animated bounceInDown">
-			
+		
 		
 			<form id="FormIngreso">
 
-				<input type="text"  placeholder="Largo del terreno" id="Largo">
-				<input type="text"  placeholder="Ancho del terreno" id="Ancho">
-				<input type="text"  placeholder="Radio del terreno" id="Radio">
+				<input type="text"  placeholder="Largo del terreno" name="Largo">
+				<input type="text"  placeholder="Ancho del terreno" name="Ancho">
+				<input type="text"  placeholder="Radio del terreno" name="Radio">
+
+
+
+			<input  type="Submit" onclick="Rectangulo()" >A- Rectangulo de alambre</input>
+			<input  type="Submit" onclick="Circulo()" >B- Circulo de alambre</input>
+			<input  type="Submit" onclick="Materiales()" >C- Materiales contrapiso</input>
+
+
 				<br>
 				
 			</form>
 			
-		</div>
-		<div class="CajaUno animated bounceInLeft">
+		
 			
 			
-			<button  class="MiBotonUTN" onclick="Rectangulo()" >A- Rectangulo de alambre</button>
-			<button  class="MiBotonUTN" onclick="Circulo()" >B- Circulo de alambre</button>
-			<button  class="MiBotonUTN" onclick="Materiales()" >C- Materiales contrapiso</button>
+			
+		
 
-		</div>
-
-		<div class="CajaEnunciado animated bounceInLeft">
+		
 			<h2>Enunciado:</h2>
 			
 	
@@ -52,10 +45,8 @@
 
 				</h3>
 			
-		</div>
+		
 
-		<div class="CajaAbajo animated bounceInUp">
-			<a  class="MiBotonUTNLinea" onclick="location.href='index.html'" >Men&uacute; ejercicios</a>	
-		</div>
+		
 	</body>
 </html>
