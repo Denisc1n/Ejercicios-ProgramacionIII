@@ -29,23 +29,25 @@ if ($accion=="ingreso") {
 		$renglon=fgets($archivo);
 		$auto=explode("-----", $renglon);
 		$listaDeAutos[]=$auto;
+		echo $auto[0]."<br>";
 	}
 //var_dump($listaDeAutos);
 	fclose($archivo);
 	$esta=false;
 	foreach ($listaDeAutos as $auto) {
-		echo $auto[0]."<br>";
+		
 		if ($auto[0]==$patente) {
 			$esta=true;
 			$fechaInicio=$auto[1];
 			$diferencia=strtotime($ahora)-strtotime($fechaInicio);
 			echo "El tiempo transcurrido es $diferencia";
+			echo "<br> Saldo a pagar: $".$diferencia*20;
 			//unset($listaDeAutos[$id]);
 		}
 		else{
 
 			if ($auto[0]!="") {
-				$listaAuxiliar[]=$auto;
+				$listaAuxiliar[]=$auto; //guarda todo lo que existe. (filtra por vacio/no vacio)
 			}
 		}
 
@@ -54,13 +56,14 @@ if ($accion=="ingreso") {
 
 
 	if ($esta) {
-		echo "El Auto se encuentra estacionado.";
-		fopen("Ticket.txt", "w");
+		echo "<br> El Auto se encuentra estacionado.";
+		$archivo=fopen("Ticket.txt", "w");
 		foreach ($listaAuxiliar as $auto) {
 			if ($auto[0]!=$patente) {
 				fwrite($archivo, $auto[0]."-----".$auto[1]);
 			}
 		}
+		fclose($archivo);
 	} else{
 		echo "El Auto no se encuentra estacionado.";
 	}
