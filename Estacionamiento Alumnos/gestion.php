@@ -19,17 +19,20 @@ $listaDeAutos=array();
 $listaAuxiliar=array();
 
 
-var_dump($_POST); //veo que me trae el POST del autito. Del boton de la foto. 
-var_dump($_FILES["fotoAutito"]);
-$archivoDestino = "Fotitos/".$_FILES["fotoAutito"]["name"];
-var_dump($archivoDestino);
-move_uploaded_file($_FILES["fotoAutito"]["tmp_name"], $archivoDestino);
+//var_dump($_POST); //veo que me trae el POST del autito. Del boton de la foto. 
+//var_dump($_FILES["fotoAutito"]);
+$nombreFoto=$patente;
+//$extension=explode(".", $_FILES["fotoAutito"]["name"]);
+$archivoDestino = "Fotitos/".$patente.".".explode(".", $_FILES["fotoAutito"]["name"])[1];
+//var_dump($extension);
+//var_dump($archivoDestino);
+move_uploaded_file($_FILES["fotoAutito"]["tmp_name"], $archivoDestino); 
 
 
 if ($accion=="ingreso") {
 	echo "Se guardo la patente $patente";
 	$archivo=fopen("Ticket.txt", "a");
-	fwrite($archivo, "$patente"."-----"."$ahora"."\n");
+	fwrite($archivo, "$patente"."-----"."$ahora"."-----"."$nombreFoto".".".explode(".",$_FILES["fotoAutito"]["name"])[1]."\n");
 	fclose($archivo);
 }else{
 	$archivo=fopen("Ticket.txt", "r");
@@ -79,8 +82,34 @@ if ($accion=="ingreso") {
 
 }
 
+//totalmente afuera del IF
+$archivo=fopen("Ticket.txt", "r");
+echo "<table border=1>";
+echo "<th> Patente</th> <th>Fecha</th> <th>Foto</th>";
+while (!feof($archivo)) {
+
+	$fila=fgets($archivo);
+	$auto=explode("-----",$fila);
+	if ($auto[0]!="") {
+		echo "<tr>";
+		echo "<br>";
+	echo $auto[0]."<   >".$auto[2];
+	echo "<td> $auto[0]</td><td>$auto[1]</td><td><img src=Fotitos/$auto[2] width=100 height=100</td>";
+	}
+	
+}
+echo "</table>";
+fclose($archivo);
+//var_dump($auto);
+
 //var_dump($_POST["estacionar"]);
 ?>
 <br>
 <br>
 <a href="index.php">volver</a>
+
+
+<!--
+
+
+	-->
