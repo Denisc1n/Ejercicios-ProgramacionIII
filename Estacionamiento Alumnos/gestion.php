@@ -20,8 +20,10 @@ $listaAuxiliar=array();
 
 
 var_dump($_POST); //veo que me trae el POST del autito. Del boton de la foto. 
-var_dump($_FILES);
-
+var_dump($_FILES["fotoAutito"]);
+$archivoDestino = "Fotitos/".$_FILES["fotoAutito"]["name"];
+var_dump($archivoDestino);
+move_uploaded_file($_FILES["fotoAutito"]["tmp_name"], $archivoDestino);
 
 
 if ($accion=="ingreso") {
