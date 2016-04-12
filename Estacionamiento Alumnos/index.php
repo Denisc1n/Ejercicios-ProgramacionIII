@@ -16,8 +16,9 @@
 	<body>
     <div class="CajaUno animated bounceInDown">
 
-            <form action="gestion.php" method="post" >
+            <form action="gestion.php" method="post" ENCTYPE="multipart/Form-Data">
             <input type="text" name="patente"  id="autocomplete"/>
+            <input type="File" name="fotoAutito"/>
             <br>
             <input type="submit" class="MiBotonUTN" value="ingreso"  name="estacionar" />
             <br/>

@@ -8,7 +8,7 @@
 	<body>
 		
 		
-			<form id="FormIngreso">
+			<form id="FormIngreso" action = "FerreteConstruccion.php" method ="POST">
 
 				<input type="text"  placeholder="Largo del terreno" name="Largo">
 				<input type="text"  placeholder="Ancho del terreno" name="Ancho">
@@ -16,9 +16,9 @@
 
 
 
-			<input  type="Submit" onclick="Rectangulo()" >A- Rectangulo de alambre</input>
-			<input  type="Submit" onclick="Circulo()" >B- Circulo de alambre</input>
-			<input  type="Submit" onclick="Materiales()" >C- Materiales contrapiso</input>
+			<br><input  type="Submit" name="Rectangulo" value="Alambrado Rectangular" >A- Rectangulo de alambre</input>
+			<br><input  type="Submit" name="Circulo" value="Alambrado Circular">B- Circulo de alambre</input>
+			<br><input  type="Submit" name="Materiales" value="Pisos">C- Materiales contrapiso</input>
 
 
 				<br>

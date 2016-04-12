@@ -18,6 +18,12 @@ $ahora=date("Y-M-d h:i:s");
 $listaDeAutos=array();
 $listaAuxiliar=array();
 
+
+var_dump($_POST); //veo que me trae el POST del autito. Del boton de la foto. 
+var_dump($_FILES);
+
+
+
 if ($accion=="ingreso") {
 	echo "Se guardo la patente $patente";
 	$archivo=fopen("Ticket.txt", "a");
